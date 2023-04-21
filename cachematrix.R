@@ -1,13 +1,13 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## create a matrix object that can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL    # inverse initialization
   set <- function(y) {    # set the matrix
     x <<- y
-    inv <<- NULL   # invalidte the cache
+    inv <<- NULL   # clear the cache after setting the matrix
   }
   get <- function() x    # get the matrix
   setinv <- function(inverse) inv <<- inverse    # set the inverse
@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## compute the inverse of a matrix and cache it
 
 cacheSolve <- function(x, ...) {
   inv <- x$getinv()    # retrieve inverse from the cache
@@ -29,3 +29,4 @@ cacheSolve <- function(x, ...) {
   x$setinv(inv)    # cache the inverse
   inv    # return the inverse
 }
+
